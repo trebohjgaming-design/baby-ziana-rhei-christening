@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christening of Baby Ziana Rhei</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(180deg, #fce4ec 0%, #f8bbd0 30%, #f48fb1 60%, #f8bbd0 80%, #fce4ec 100%);
+            color: #5d4037;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Floating decorative elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .cross-icon {
+            font-size: 48px;
+            color: #c2185b;
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #ad1457;
+            margin-bottom: 10px;
+        }
+
+        .hero-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: #880e4f;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(136, 14, 79, 0.15);
+        }
+
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #6a1b3a;
+            margin-bottom: 8px;
+        }
+
+        .hero-date {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            color: #ad1457;
+        }
+
+        .divider {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c2185b, transparent);
+            margin: 30px auto;
+        }
+
+        .ornament {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #e91e63;
+            opacity: 0.5;
+            margin: 10px 0;
+        }
+
+        /* Hero Image */
+        .hero-image-wrapper {
+            max-width: 450px;
+            margin: 30px auto;
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            border: 6px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 15px 40px rgba(136, 14, 79, 0.2);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #880e4f;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #ad1457;
+            margin-bottom: 40px;
+        }
+
+        /* Photo Gallery */
+        .gallery-section {
+            padding: 50px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 10px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(136, 14, 79, 0.15);
+            aspect-ratio: 4/5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(136, 14, 79, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid rgba(255,255,255,0.4);
+            border-radius: 16px;
+            pointer-events: none;
+        }
+
+        /* Godparents Section */
+        .godparents-section {
+            padding: 60px 0;
+        }
+
+        .godparents-card {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 40px rgba(136, 14, 79, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .godparents-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .godparent-group h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #880e4f;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .godparent-group ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .godparent-group ul li {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: #5d4037;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(194, 24, 91, 0.1);
+            transition: color 0.2s;
+        }
+
+        .godparent-group ul li:last-child {
+            border-bottom: none;
+        }
+
+        .godparent-group ul li:hover {
+            color: #c2185b;
+        }
+
+        /* Quote / Verse */
+        .verse-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .verse-card {
+            background: rgba(255,255,255,0.45);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .verse-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #6a1b3a;
+        }
+
+        .verse-ref {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: #ad1457;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: #880e4f;
+        }
+
+        .footer-sub {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #ad1457;
+            margin-top: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-name {
+                font-size: 3rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .godparents-columns {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .godparents-card {
+                padding: 30px 20px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-name {
+                font-size: 2.5rem;
+            }
+            .hero {
+                padding: 40px 15px 30px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero { animation: fadeInUp 1s ease-out; }
+        .gallery-section { animation: fadeInUp 1s ease-out 0.2s both; }
+        .godparents-section { animation: fadeInUp 1s ease-out 0.4s both; }
+        .verse-section { animation: fadeInUp 1s ease-out 0.6s both; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="cross-icon">&#10013;</div>
+            <p class="hero-subtitle">The Christening of</p>
+            <h1 class="hero-name">Baby Ziana Rhei</h1>
+            <p class="hero-tagline">"For this child I prayed, and the Lord has granted me what I asked of Him."</p>
+            <p class="hero-date">1 Samuel 1:27</p>
+            <div class="divider"></div>
+
+            <div class="hero-image-wrapper">
+                <img src="d2ed0678-9bd2-4750-b509-5ebb1d996f53.jpg" alt="Baby Ziana Rhei">
+            </div>
+        </section>
+
+        <!-- Bible Verse -->
+        <section class="verse-section">
+            <div class="verse-card">
+                <p class="verse-text">
+                    "Let the little children come to me, and do not hinder them,
+                    for the kingdom of heaven belongs to such as these."
+                </p>
+                <p class="verse-ref">- Matthew 19:14</p>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="gallery-section">
+            <h2 class="section-title">Precious Moments</h2>
+            <p class="section-subtitle">A Glimpse of Joy</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="53ea9857-b82a-4cde-8e18-32d38759f452.jpg" alt="Baby Ziana Rhei smiling">
+                </div>
+                <div class="gallery-item">
+                    <img src="af2e18db-e23e-43e7-a642-b04b1cc7157d.jpg" alt="Baby Ziana Rhei in pink tutu">
+                </div>
+                <div class="gallery-item">
+                    <img src="32acf458-3b7b-45d0-aa0b-64b38d5cdbce.jpg" alt="Baby Ziana Rhei with cake">
+                </div>
+                <div class="gallery-item">
+                    <img src="bf37722c-9792-44f0-959f-9df898e2c1fe.jpg" alt="Baby Ziana Rhei full outfit">
+                </div>
+                <div class="gallery-item">
+                    <img src="e1121c25-3de1-4fd6-b0ea-ca84acb1cc39.jpg" alt="Baby Ziana Rhei portrait">
+                </div>
+                <div class="gallery-item">
+                    <img src="47d9fc6d-3a44-4e44-9b11-447288888e0c.jpg" alt="Baby Ziana Rhei posing">
+                </div>
+                <div class="gallery-item">
+                    <img src="7a1d9d36-ca12-4aa4-83e4-e7525793e958.jpg" alt="Baby Ziana Rhei sitting">
+                </div>
+                <div class="gallery-item">
+                    <img src="dcaadac6-5a2c-4ff9-b68f-846723dd43d2.jpg" alt="Baby Ziana Rhei laughing">
+                </div>
+                <div class="gallery-item">
+                    <img src="9a5e91ec-acab-4a16-ab43-4c25e23129f7.jpg" alt="Baby Ziana Rhei in blue outfit">
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Godparents Section -->
+        <section class="godparents-section">
+            <h2 class="section-title">Godparents</h2>
+            <p class="section-subtitle">Guided by Faith & Love</p>
+
+            <div class="godparents-card">
+                <div class="godparents-columns">
+                    <div class="godparent-group">
+                        <h3>Ninong</h3>
+                        <ul>
+                            <li>Bernardo Dacayanan Jr.</li>
+                            <li>Christian Sibbaluca</li>
+                            <li>Cicero Osias</li>
+                            <li>Jaren Ocampo</li>
+                            <li>John Michael Delos Santos</li>
+                            <li>John Robert Rodolfo</li>
+                            <li>Jomar Miranda</li>
+                            <li>Joshua Patayan Mamaradlo</li>
+                            <li>Leonard Zedrick Magtulis</li>
+                            <li>Marco Caperocho</li>
+                            <li>Matthew Gabe Delos Santos</li>
+                            <li>Norman Dela Cruz</li>
+                            <li>Raymond Jay A. Castillo</li>
+                            <li>Redgiemil Castillo</li>
+                            <li>Rick Bencent Lazo</li>
+                            <li>Romeo Vidad</li>
+                        </ul>
+                    </div>
+                    <div class="godparent-group">
+                        <h3>Ninang</h3>
+                        <ul>
+                            <li>Jackielyn Lazo</li>
+                            <li>Jessa Moralidad</li>
+                            <li>Jhoy Aquino</li>
+                            <li>Joriene Mutya</li>
+                            <li>Karen Tracy</li>
+                            <li>Lynsie Dls Ducusin</li>
+                            <li>Mariel Gillan Ikan</li>
+                            <li>Mary Joyce Liquiran</li>
+                            <li>Maru Nambatac</li>
+                            <li>Mikylla Joy Villados</li>
+                            <li>Roselyn Lazo</li>
+                            <li>Shamsa Ynna Malelang</li>
+                            <li>Syrene N. Magware</li>
+                            <li>Thena Delos Santos</li>
+                            <li>Zhavia Blythe Patron</li>
+                            <li>Charlyn Morales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Thank You for Being Part of This Blessing</p>
+            <p class="footer-sub">Baby Ziana Rhei's Christening</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
